@@ -31,7 +31,7 @@ const OptionsSection = ({ setOptionsData }) => {
             className="border rounded px-2 py-1 w-full"
           />
         </div>
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <label className="w-1/3">Labels on panels</label>
           <input
             type="checkbox"
@@ -75,7 +75,7 @@ const OptionsSection = ({ setOptionsData }) => {
             checked={options.grainDirection}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

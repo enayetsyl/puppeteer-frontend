@@ -7,7 +7,9 @@ function App() {
   const [panelsData, setPanelsData] = useState([]);
   const [stockSheetData, setStockSheetData] = useState([]);
   const [optionsData, setOptionsData] = useState({});
+  const [cloudLink, setCloudLink] = useState({})
 
+  console.log('cloudin link', cloudLink)
   const handleSubmit = () => {
     const data = {
       panels: panelsData,
@@ -47,6 +49,7 @@ console.log(data)
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
+        setCloudLink(data)
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -77,6 +80,15 @@ console.log(data)
     >
       Submit
     </button>
+
+    {
+      cloudLink?.yourDesignLink && (
+        <div className="my-5">
+          <h1>Your design Image is as follows</h1>
+          <a href={cloudLink?.yourDesignLink}>{cloudLink?.yourDesignLink}</a>
+        </div>
+      )
+    }
   </div>
   );
 }
